@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -2;
+    opacity: 0.6;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.mobile{
+    width: 500px;
+    height: 710px;
+    background-color: rgb(214, 214, 214);
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-top: 40px;
+    background: linear-gradient(to right, #dcdcdc, #bebebe);
+    border: 2px solid rgb(180, 180, 180);
+}
+
+.tela canvas{
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid rgb(168, 168, 168);
+}
+
+.corpo{
+    margin-top: 30px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.controller {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(145, 145, 145);
+    border-radius: 50%;
+    display: flex;
+    border: 2px solid rgb(107, 107, 107);
+}
+
+.buttons{
+    width: 110px;
+    height: 30px;
+    margin-top: 23px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons .btn1{
+    width: 50px;
+    height: 30px;
+    background-color: rgb(136, 0, 0);
+    border-radius: 20px;
+    transform: translate(0, 30px);
+    text-align: center;
+    font-size: 25px;
+    color: #490000;
+}
+
+.buttons .btn2{
+    width: 50px;
+    height: 30px;
+    background-color: red;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 25px;
+    color: #800000;
+}
+
+.title{
+    background-color: rgb(182, 182, 182);
+    color: rgb(145, 145, 145);
+    margin-top: 60px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid rgb(168, 168, 168);
+}
+
+.title h1{
+    font-size: 40px;
+    font-family: 'Silkscreen'; 
+}
+
+.max-ins{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.instruction{
+    justify-content: center;
+}
+
+@keyframes piscar {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.instruction p{
+    padding-top: 10px;
+    font-size: 15px;
+    font-family: 'Silkscreen'; 
+    animation: piscar 5s infinite;
+}
+
