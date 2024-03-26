@@ -12,29 +12,32 @@ window.onload = function() {
     velY = 0;
     grid =20; //tamanho da grade
     tam = 3; //tamanho da cobra
+    ant = 0; //direção anterior
 
     //chamada da função jogo a cada 100ms
     setInterval(jogo,100)
 
     // Controles
     document.addEventListener("keydown", function(e){
-        switch(e.keyCode){
-            case 65: //esquerda
-                velX = -1;
-                velY = 0;
-                break;
-            case 87: //cima
-                velX = 0;
-                velY = -1;
-                break;
-            case 68: //direita
-                velX = 1;
-                velY = 0;
-                break;
-            case 83: //baixo
-                velX = 0;
-                velY = 1;
-                break;
+        if(e.keyCode == 65 && ant != 68){ //esquerda
+            velX = -1;
+            velY = 0;
+            ant = 65;
+        }
+        if(e.keyCode == 87 && ant != 83){ //cima
+            velX = 0;
+            velY = -1;
+            ant = 87;
+        }
+        if(e.keyCode == 68 && ant != 65){ //direita
+            velX = 1;
+            velY = 0;
+            ant = 68;
+        }
+        if(e.keyCode == 83 && ant != 87){ //baixo
+            velX = 0;
+            velY = 1;
+            ant = 83;
         }
     });
 }
@@ -64,8 +67,8 @@ function jogo(){
     ctx.fillStyle = "#415C01";
     for(let i=0; i<snake.length; i++){
         ctx.fillRect(snake[i].x*grid,snake[i].y*grid,grid-1,grid-1);
-        if(snake[i].x == positionX && snake[i].y == positionY){
-            tam = 3;
+        if(snake[i].x == positionX && snake[i].y == positionY && snake.length > 3){
+            location.reload(); //recarrega a pagina
         }
     }
 
